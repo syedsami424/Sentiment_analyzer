@@ -11,7 +11,7 @@ def amazon_scraper():
     global product_reviews
     product_reviews = {}
 
-    for i in range(1,4):
+    for i in range(5,8):
         if webpage.status_code == 200:
             soup = BeautifulSoup(webpage.content, 'html.parser')
             try:
@@ -52,7 +52,7 @@ def amazon_scraper():
 
                         for body in review_text:
                             text = body.get_text().strip()
-                            print(text)
+                            #print(text)
                             print()
                             review_list.append(text)
 
@@ -63,7 +63,7 @@ def amazon_scraper():
                                 last_span = span_ele[-1]
                                 review_count+=1
                                 span = last_span.get_text().strip()
-                                print(span)
+                                #print(span)
                                 print()
                                 review_list.append(span)
 
